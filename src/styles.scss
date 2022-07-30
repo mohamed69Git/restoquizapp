@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+@import '~bootstrap/scss/bootstrap.scss';
+
+.colorbrand {
+    color: #f76d37
+}
+
+.bg-image {
+    background-image: url('assets/images/banner-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}

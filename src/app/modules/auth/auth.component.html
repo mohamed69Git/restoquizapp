@@ -1,0 +1,20 @@
+<div class="bg-image">
+  <nz-card style="width: 50%" nzTitle="Card title" [nzExtra]="extraTemplate">
+    <nz-card-tab>
+      <nz-tabset nzSize="large" [(nzSelectedIndex)]="index1">
+        <nz-tab nzTitle="tab1">
+          <app-login></app-login>
+        </nz-tab>
+        <nz-tab nzTitle="tab2">
+          <app-register></app-register>
+        </nz-tab>
+      </nz-tabset>
+    </nz-card-tab>
+    content{{ index1 }}
+  </nz-card>
+  <ng-template #extraTemplate>
+    <a>More</a>
+  </ng-template>
+  <br />
+  <br />
+</div>
