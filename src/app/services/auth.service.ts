@@ -11,7 +11,7 @@ export class AuthService extends Base {
   // private endPoint = env.api
   // private httpClient!: HttpClient
   protected override _baseUrl: string = 'admin/';
-  constructor(private h: HttpClient, private router: Router) {
+  constructor(protected h: HttpClient, protected router: Router) {
     super();
     this.httpClient = h;
   }

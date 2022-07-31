@@ -1,26 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthComponent } from './modules/auth/auth.component';
-import { HomeComponent } from './modules/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './modules/user/user.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
+  {
+    path: 'home', component: HomeComponent
+  },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   {
-    path: 'auth', component: AuthComponent, children: [
-      {
-        path: '', loadChildren: () =>
-          import('./modules/auth/auth.module').then((m) => m.AuthModule)
-      }
-    ]
-  },
-  {
-    path: 'home', component: HomeComponent, children: [
-      {
-        path: '', loadChildren: () =>
-          import('./modules/home/home.module').then((m) => m.HomeModule)
-      }
-    ]
+
+    path: 'auth', loadChildren: () =>
+      import('./modules/auth/auth.module').then((m) => m.AuthModule)
+
   },
   {
     path: 'user', component: UserComponent, children: [
