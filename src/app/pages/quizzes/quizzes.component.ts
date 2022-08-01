@@ -14,12 +14,12 @@ export class QuizzesComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    // this.quizzesDone.push({id: '', })
     this.getAllQuizzes()
   }
 
-  setQuiz(quiz: Quiz, value: number) {
+  setQuiz(value: any) {
     console.log("Valeur ", value)
+    //En cours
   }
 
   getAllQuizzes() {
@@ -28,13 +28,11 @@ export class QuizzesComponent implements OnInit {
         this.quizzes = response
         this.quizzes.forEach(element => {
           element.questions.forEach(element2 => {
-            // console.log(element2.reponses)
             element2.reponses.forEach(element3 => {
               console.log(element3)
             })
           });
         });
-        // console.log(response);
 
       },
       error: (errors) => {

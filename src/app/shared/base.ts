@@ -61,6 +61,10 @@ export class Base extends AbstractPreferences {
         });
     }
 
+    getUser(): User {
+        return JSON.parse(sessionStorage.getItem('user')!);
+    }
+
     clearSession() {
         sessionStorage.clear();
         localStorage.clear();

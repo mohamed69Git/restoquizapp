@@ -83,9 +83,8 @@ export class LoginComponent implements OnInit {
       });
   }
   private loginSuccess(response: LoginResponse) {
-    console.log("RESPONSE:", response);
-    console.log(response.data)
-    this.authService.setToken(response.data.accessToken);
+    console.log("RESPONSE:", response.data.token);
+    this.authService.setToken(response.data.token);
     this.authService.setUser(response.data.user);
     this.router.navigate(['/user/quizzes'])
   }

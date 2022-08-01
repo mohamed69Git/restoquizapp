@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { LoginResponse } from '../models/loginResponse';
 import { Base } from '../shared/base';
 import { Router } from '@angular/router';
+import { Candidat } from '../models/candidat';
 @Injectable({
   providedIn: 'root'
 })
@@ -28,6 +29,32 @@ export class AuthService extends Base {
         observe: 'body',
       }
     );
+  }
+
+  register(candidat: Candidat) {
+    return this.http.post<Candidat>(
+      this.endPoint + 'register',
+      {
+        name: candidat.name,
+        email: candidat.email,
+        password: candidat.password,
+      },
+      {
+        headers: this.guestHeaders,
+        observe: 'body',
+      }
+    );
+  }
+  checkAuthentication() {
+    if (this.isLogIn()) {
+      const user = this.getUser();
+      if (user == null) {
+        this.logout();
+        this.router.navigate(['/auth/login']);
+      } else {
+        this.router.navigate(['/user/quizzes']);
+      }
+    }
   }
 
 

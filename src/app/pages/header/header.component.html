@@ -18,22 +18,38 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Accueil</a>
+            <a
+              class="nav-link"
+              [routerLink]="['/home']"
+              routerLinkActive="router-link-active"
+              >Accueil</a
+            >
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="about.html">A propos</a>
-          </li>
-          <li class="nav-item">
+          </li> -->
+          <!-- <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact Us</a>
-          </li>
-          <li class="nav-item">
+          </li> -->
+          <li class="nav-item" *ngIf="!authService.isLogIn()">
             <a
               name=""
               id=""
               class="btn btn-light colorbrand"
-              [routerLink]="['auth/register']"
+              [routerLink]="['/auth/login-register']"
               role="button"
               >Connexion/Inscription</a
+            >
+          </li>
+          <li class="nav-item" *ngIf="authService.isLogIn()">
+            <a
+              name=""
+              id=""
+              (click)="logout()"
+              class="btn btn-light colorbrand"
+              [routerLink]="['/auth/login-register']"
+              role="button"
+              >Deconnexion</a
             >
           </li>
         </ul>

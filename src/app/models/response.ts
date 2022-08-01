@@ -4,5 +4,5 @@ export interface Response {
     question_id: number;
     type: string;
     description: string;
-    checked: number;
+    checked: any;
 }

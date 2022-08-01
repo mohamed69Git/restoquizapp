@@ -5,22 +5,21 @@
       <ul *ngFor="let question of item.questions">
         <h5>{{ question.libelle }}</h5>
 
-        <li class="label">
-          <nz-radio-group [ngModel]="">
-            <ng-container *ngFor="let reponse of question.reponses">
-              <label nz-radio [nzValue]="reponse.type">A</label>
-            </ng-container>
-          </nz-radio-group>
-          <!-- <label
+        <li class="label" *ngFor="let reponse of question.reponses">
+          <label
             nz-checkbox
-            [ngModelChange]="reponse.checked == 0 ? 'true' : 'false'"
-            (click)="setQuiz(item, reponse.checked)"
+            [ngModel]="reponse.checked == 0 ? 'true' : 'false'"
+            (ngModelChange)="
+              setQuiz(reponse.checked);
+              reponse.checked = reponse.checked == 1 ? 'true' : 'false'
+            "
             >{{ reponse.libelle }}</label
-          > -->
+          >
         </li>
       </ul>
-
-      <button class="submit-btn btn-block">Envoyer les réponses</button>
+      <button class="submit-btn btn-block" [disabled]="true">
+        Envoyer les réponses
+      </button>
     </ng-container>
   </ng-container>
 </div>
