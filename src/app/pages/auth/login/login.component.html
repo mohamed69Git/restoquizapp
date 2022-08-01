@@ -1,0 +1,43 @@
+<div class="form">
+  <form
+    nz-form
+    class="login-form"
+    [formGroup]="validateForm"
+    (ngSubmit)="submitForm()"
+  >
+    <!--INPUT EMAIL-->
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Renseigner une adresse email correcte!">
+        <input
+          autocomplete
+          type="text"
+          placeholder="Adresse email"
+          nz-input
+          formControlName="email"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <!--INPUT PASSWORD-->
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your password!">
+        <input
+          type="password"
+          autocomplete="false"
+          placeholder="Mot de passe"
+          nz-input
+          formControlName="password"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <button
+      type="submit"
+      [disabled]="!validateForm.valid"
+      (click)="login()"
+      [nzLoading]="isLoad"
+      nz-button
+      [ngStyle]="{ height: '47px' }"
+    >
+      Se connecter
+    </button>
+  </form>
+</div>

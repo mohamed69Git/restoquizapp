@@ -1,6 +1,8 @@
-
+import { Response } from "./response";
 export interface Question {
     id: number;
-    response_id: number;
-    question: string;
+    libelle: string;
+    description: string;
+    quiz_id: number;
+    reponses: Response[];
 }

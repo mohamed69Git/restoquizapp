@@ -1,0 +1,24 @@
+.quizzimages {
+    background-image: url("/assets/images/quizback.png");
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    background-size: cover;
+}
+
+.label {
+    margin-left: 30px;
+    padding: 10px;
+}
+
+.submit-btn {
+    padding: 8px;
+    outline: solid #3F2817 2px;
+    background: none;
+    color: #3F2817;
+
+    &:hover {
+        color: white;
+        background-color: #3F2817;
+    }
+}

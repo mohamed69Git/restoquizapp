@@ -12,6 +12,9 @@ import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { TestComponent } from './test/test.component';
 import { AuthModule } from './modules/auth/auth.module';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserModule } from './modules/user/user.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { AuthModule } from './modules/auth/auth.module';
 
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
     AuthModule,
+    NzFormModule,
+    UserModule,
     NzButtonModule,
     AppRoutingModule,
     ReactiveFormsModule,

@@ -2,6 +2,7 @@ import { Admin } from './../models/admin';
 import { AbstractPreferences } from './preferences';
 import { environment as env } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { User } from '../models/user';
 export class Base extends AbstractPreferences {
     private _host = env.host;
     private _api = env.api;
@@ -30,7 +31,7 @@ export class Base extends AbstractPreferences {
             'Content-type': 'application/json',
         };
     }
-    setUser(user: Admin) {
+    setUser(user: User) {
         sessionStorage.setItem('user', JSON.stringify(user));
     }
     get http() {

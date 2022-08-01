@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class AuthService extends Base {
   // private endPoint = env.api
   // private httpClient!: HttpClient
-  protected override _baseUrl: string = 'admin/';
+  protected override _baseUrl: string = '';
   constructor(protected h: HttpClient, protected router: Router) {
     super();
     this.httpClient = h;
@@ -29,5 +29,7 @@ export class AuthService extends Base {
       }
     );
   }
+
+
 
 }

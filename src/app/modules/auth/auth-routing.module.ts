@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthuserComponent } from 'src/app/pages/authuser/authuser.component';
+import { AuthuserComponent } from 'src/app/pages/auth/authuser.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login-register' },
   { path: 'login-register', component: AuthuserComponent },
